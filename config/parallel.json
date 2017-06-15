@@ -1,0 +1,41 @@
+{
+
+  "server": "hub.browserstack.com",
+
+  "user": "venureddy2",
+
+  "key": "yrS9RqhvzwaG9jzDzH9s",
+
+
+
+  "capabilities": {
+
+    "build": "behave-browserstack",
+
+    "name": "parallel_test",
+
+    "browserstack.debug": true
+
+  },
+
+
+
+  "environments": [{
+
+    "browser": "chrome"
+
+  },{
+
+    "browser": "firefox"
+
+  },{
+
+    "browser": "safari"
+
+  },{
+
+    "browser": "internet explorer"
+
+  }]
+
+}
