@@ -228,38 +228,38 @@ def verify_new_company_in_search_results(context):
     print("My Company name is: {}.".format(vlue))
     assert context.company_name == vlue
 
-def enter_postcode_for_uk_address(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_uk_postcode).send_keys("EC2Y 9AE")
+def enter_postcode_for_uk_address(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_uk_postcode.format(type, div)).send_keys("EC2Y 9AE")
 
 
-def click_on_find_my_address_button(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_find_uk_address).click()
+def click_on_find_my_address_button(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_find_uk_address.format(type, div)).click()
 
 
-def click_on_uk_address_list(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_dropdown).click()
+def click_on_uk_address_list(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_dropdown.format(type, div)).click()
 
 
-def select_uk_address_from_list(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list).click()
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list).send_keys(u'\ue004')
+def select_uk_address_from_list(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format(type, div)).click()
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format(type, div)).send_keys(u'\ue004')
 
 
-def enter_postcode_for_uk_trading_address(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_uk_postcode.format('trading')).send_keys("EC2Y 9AE")
+def enter_postcode_for_uk_trading_address(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_uk_postcode.format(type, div)).send_keys("EC2Y 9AE")
 
 
-def click_on_find_my_trading_address_button(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_find_uk_address.format('trading')).click()
+def click_on_find_my_trading_address_button(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_find_uk_address.format(type, div)).click()
 
 
-def click_on_uk_trading_address_list(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_dropdown.format('trading')).click()
+def click_on_uk_trading_address_list(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_dropdown.format(type, div)).click()
 
 
-def select_uk_trading_address_from_list(context):
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format('trading')).click()
-    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format('trading')).send_keys(u'\ue004')
+def select_uk_trading_address_from_list(context, type, div):
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format(type, div)).click()
+    context.driver.find_element_by_xpath(CompanyDetails.primary_select_an_uk_address_from_list.format(type, div)).send_keys(u'\ue004')
 
 def select_uk_region(context):
     select = Select(context.driver.find_element_by_id(CompanyDetails.uk_region))
@@ -334,16 +334,16 @@ def step_impl(context):
     select_type_of_organisation_for_other_uk(context)
     click_continue_button(context)
     enter_new_company_name(context, 'Other type of UK')
-    enter_new_trading_name(context)
-    enter_postcode_for_uk_address(context)
-    click_on_find_my_address_button(context)
-    click_on_uk_address_list(context)
-    select_uk_address_from_list(context)
+    #enter_new_trading_name(context)
+    enter_postcode_for_uk_address(context, 'registered', '2')
+    click_on_find_my_address_button(context, 'registered', '2')
+    click_on_uk_address_list(context, 'registered', '3')
+    select_uk_address_from_list(context, 'registered', '3')
     click_on_add_trading_address_button(context)
-    enter_postcode_for_uk_trading_address(context)
-    click_on_find_my_trading_address_button(context)
-    click_on_uk_trading_address_list(context)
-    select_uk_trading_address_from_list(context)
+    enter_postcode_for_uk_trading_address(context, 'trading', '1')
+    click_on_find_my_trading_address_button(context, 'trading', '1')
+    click_on_uk_trading_address_list(context, 'trading', '2')
+    select_uk_trading_address_from_list(context, 'trading', '2')
     select_uk_region(context)
     select_a_sector(context)
     enter_a_website(context)
@@ -369,10 +369,10 @@ def step_impl(context):
     click_on_choose_parent_company_button(context)
     enter_new_trading_name(context)
     click_on_add_trading_address_button(context)
-    enter_postcode_for_uk_trading_address(context)
-    click_on_find_my_trading_address_button(context)
-    click_on_uk_trading_address_list(context)
-    select_uk_trading_address_from_list(context)
+    enter_postcode_for_uk_trading_address(context, 'trading', '2')
+    click_on_find_my_trading_address_button(context, 'trading', '2')
+    click_on_uk_trading_address_list(context, 'trading', '3')
+    select_uk_trading_address_from_list(context, 'trading', '3')
     select_uk_region(context)
     select_a_sector(context)
     enter_a_website(context)

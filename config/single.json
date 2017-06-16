@@ -4,7 +4,7 @@
 
   "user": "venureddy2",
 
-  "key": "yrS9RqhvzwaG9jzDzH9s",
+  "key": "",
 
 
 
@@ -22,7 +22,11 @@
 
   "environments": [{
 
-    "browser": "chrome"
+    "os": "Windows",
+    "os_version": "10",
+    "browser": "Firefox",
+    "browser_version": "41.0",
+    "resolution": "1024x768"
 
   }]
 

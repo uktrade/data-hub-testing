@@ -62,14 +62,14 @@ annualTurnover = "turnover_range"
 
 # Postcodelookup
 
-primary_uk_postcode = ".//*[@id='{}-address-wrapper']/div[2]/input"
-primary_find_uk_address = ".//*[@id='{}-address-wrapper']/div[2]/button"
-primary_select_an_uk_address_dropdown = ".//*[@id='{}-address-wrapper']/div[3]/select"
-primary_select_an_uk_address_from_list = ".//*[@id='{}-address-wrapper']/div[3]/select/option[2]"
-trading_uk_postcode = ".//*[@id='trading-address-wrapper']/div[1]/input"
-trading_find_uk_address = ".//*[@id='trading-address-wrapper']/div[1]/button"
-trading_select_an_uk_address_dropdown = ".//*[@id='trading-address-wrapper']/div[2]/select"
-trading_select_an_uk_address_from_list = ".//*[@id='trading-address-wrapper']/div[2]/select/option[2]"
+primary_uk_postcode = ".//*[@id='{}-address-wrapper']/div[{}]/input"
+primary_find_uk_address = ".//*[@id='{}-address-wrapper']/div[{}]/button"
+primary_select_an_uk_address_dropdown = ".//*[@id='{}-address-wrapper']/div[{}]/select"
+primary_select_an_uk_address_from_list = ".//*[@id='{}-address-wrapper']/div[{}]/select/option[2]"
+# trading_uk_postcode = ".//*[@id='trading-address-wrapper']/div[1]/input"
+# trading_find_uk_address = ".//*[@id='trading-address-wrapper']/div[1]/button"
+# trading_select_an_uk_address_dropdown = ".//*[@id='trading-address-wrapper']/div[2]/select"
+# trading_select_an_uk_address_from_list = ".//*[@id='trading-address-wrapper']/div[2]/select/option[2]"
 uk_region = "uk_region"
 
 def fill_out_the_login_form(driver):
